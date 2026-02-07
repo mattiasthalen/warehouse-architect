@@ -94,7 +94,8 @@ The DAB layer must produce a correct, methodology-compliant Anchor Model through
 - **Platform**: OpenCode.ai agents — must conform to OpenCode's agent definition format
 - **CLI**: Python CLI (`architect init`, `architect generate`)
 - **Tooling**: UV for package management and builds. Linting, type checking, and testing enforced.
-- **Build**: Makefile with targets: `bootstrap` (install deps), `lint`, `type`, `test`, `check` (runs all three)
+- **Pre-commit**: Pre-commit hooks installed via `make bootstrap`. Enforces lint, type check, and commit message format (conventional commits) before every commit.
+- **Build**: Makefile with targets: `bootstrap` (install deps + pre-commit hooks), `lint`, `type`, `test`, `check` (runs all three)
 - **Versioning**: Dynamic versioning from git tags — no hardcoded version strings
 - **CI/CD**: CI runs lint + type + test on PRs. CD packages release and publishes to PyPI on tagged releases.
 - **Methodology**: ADSS + Anchor Modeling + USS are non-negotiable. This is the opinion.
