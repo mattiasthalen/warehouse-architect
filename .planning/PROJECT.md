@@ -1,4 +1,4 @@
-# Warehouse Architect
+# Data Architect
 
 ## What This Is
 
@@ -93,6 +93,10 @@ The DAB layer must produce a correct, methodology-compliant Anchor Model through
 - **Testing**: TDD mandatory — tests written before implementation
 - **Platform**: OpenCode.ai agents — must conform to OpenCode's agent definition format
 - **CLI**: Python CLI (`architect init`, `architect generate`)
+- **Tooling**: UV for package management and builds. Linting, type checking, and testing enforced.
+- **Build**: Makefile with targets: `bootstrap` (install deps), `lint`, `type`, `test`, `check` (runs all three)
+- **Versioning**: Dynamic versioning from git tags — no hardcoded version strings
+- **CI/CD**: CI runs lint + type + test on PRs. CD packages release and publishes to PyPI on tagged releases.
 - **Methodology**: ADSS + Anchor Modeling + USS are non-negotiable. This is the opinion.
 - **Separation**: CLP debate (probabilistic, agents) vs DAS/DAR generation (deterministic, code). Clear boundary.
 - **Spec Format**: YAML/JSON source of truth. Generators consume specs, not prose.
@@ -110,6 +114,9 @@ The DAB layer must produce a correct, methodology-compliant Anchor Model through
 | Specs as contract between agents and generators | Clean separation of AI creativity and deterministic output | — Pending |
 | Anchor Modeling for DAB | Maximum agility — non-destructive schema evolution, resilient to change | — Pending |
 | Milestone 1: init + agents only | Prove the agent experience before building generators | — Pending |
+| UV for package management | Modern, fast, replaces pip/poetry/setuptools | — Pending |
+| Dynamic versioning from git tags | Single source of truth for version, no manual bumps | — Pending |
+| Makefile as task runner | Universal, no extra deps, bootstrap/lint/type/test/check | — Pending |
 
 ---
 *Last updated: 2026-02-07 after pivot*
